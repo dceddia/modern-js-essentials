@@ -1,7 +1,5 @@
 // a plain old named function
-function getFullName(first, last) {
-  return first + ' ' + last;
-}
+const getFullName = (first, last) => first + ' ' + last;
 
 // another named function
 function createUser(name, email) {
@@ -13,9 +11,19 @@ function createUser(name, email) {
 }
 
 // an anonymous function, stored in a variable
-var printBestBaseballTeam = function(team) {
-  console.log('Red Sox');
+// var printBestBaseballTeam = function(team) {
+//   console.log('Red Sox');
+// };
+
+const printA = (i = 0) => {
+  console.log(i);
+  printA;
 };
+const printB = function() {
+  console.log(this);
+};
+// printA.bind({ hi: 'A' })();
+// printB.bind({ hi: 'B' })();
 
 // a function that does a few things
 // (has more than 1 statement before the return)
@@ -27,7 +35,7 @@ function sumNumbers(numbers) {
   return total;
 }
 
-console.log(getFullName('Dave', 'Ceddia'));
-console.log(createUser('Dave', 'dave@example.com'));
-printBestBaseballTeam('Yankees');
-console.log(sumNumbers([1, 2, 3]));
+// console.log(getFullName('Dave', 'Ceddia'));
+// console.log(createUser('Dave', 'dave@example.com'));
+// console.log(printBestBaseballTeam('Yankees'));
+// console.log(sumNumbers([1, 2, 3]));

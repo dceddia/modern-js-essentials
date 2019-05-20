@@ -6,4 +6,9 @@ const people = [
 
 // make a list of their names
 
+const names = people.filter((person, index) => {
+  return person.first !== 'Dan';
+});
+console.log(names);
+
 // add fullName to each person
