@@ -29,3 +29,5 @@ function print({ message }) {
   console.log(message);
 }
 print({ message: 'hi' });
+
+function Item({ className }) {}

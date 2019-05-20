@@ -59,3 +59,11 @@ const minMaxTotalTweets = people.reduce(
   }
 );
 console.log(minMaxTotalTweets);
+
+const sum = (a, b) => {
+  return a + b;
+};
+
+function sum(a, b) {
+  return a + b;
+}
