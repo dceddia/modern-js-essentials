@@ -1,33 +1,32 @@
 // a plain old named function
-function getFullName(first, last) {
+function makeFullName(first, last) {
   return first + ' ' + last;
 }
+
+const printFullName = function(first, last) {
+  console.log(first, last);
+};
 
 // another named function
 function createUser(name, email) {
   return {
-    name: name,
-    email: email,
+    name,
+    email,
     createdAt: Date.now()
   };
 }
 
-// an anonymous function, stored in a variable
-var printBestBaseballTeam = function(team) {
-  console.log('Red Sox');
-};
+console.log(createUser('Dave', 'dave@example.com'));
+printFullName('A', 'B');
+console.log(makeFullName('Dave', 'Ceddia'));
 
-// a function that does a few things
-// (has more than 1 statement before the return)
-function sumNumbers(numbers) {
-  var total = 0;
-  for (var i = 0; i < numbers.length; i++) {
-    total += numbers[i];
-  }
-  return total;
+function notAnArrow() {
+  console.log(this);
 }
 
-console.log(getFullName('Dave', 'Ceddia'));
-console.log(createUser('Dave', 'dave@example.com'));
-printBestBaseballTeam('Yankees');
-console.log(sumNumbers([1, 2, 3]));
+const arrowFun = () => {
+  console.log(this);
+};
+
+notAnArrow();
+arrowFun();
