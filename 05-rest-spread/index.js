@@ -1,16 +1,26 @@
 // Rest & Spread operators
 // 2 names for three dots that look the same
 
-// Rest to accept infinite args
-function printArgs() {
-  console.log(arguments);
+function printArgs(first, second, ...rest) {
+  console.log(first, second, rest);
 }
-printArgs(1, 2, 3, 4, 5);
-
-// Spread to explode an array or object in place
 const nums = [1, 2, 3, 4];
+printArgs(nums[0], nums[1], nums[2], nums[3]);
+
 const user = {
   username: 'dceddia',
-  firstName: 'Dave',
   lastName: 'Ceddia'
 };
+console.log({
+  firstName: 'Default',
+  ...user,
+  fullName: `${user.firstName} ${user.lastName}`
+});
+
+const DEBUG = false;
+const debug = (...args) => {
+  if (DEBUG) {
+    console.log(...args);
+  }
+};
+debug('this', 'works', 'great');
