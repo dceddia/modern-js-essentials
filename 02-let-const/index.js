@@ -11,24 +11,27 @@ function scopeTest() {
 }
 scopeTest();
 
-// // var vs. let inside a closure
-// //   var: creates one variable, closure latches on
-// //   let: creates a new variable for each iteration
-// function printNumbers() {
-//   for (var i = 0; i < 5; i++) {
-//     console.log(i);
-//   }
-// }
-// printNumbers();
+// var vs. let inside a closure
+//   var: creates one variable, closure latches on
+//   let: creates a new variable for each iteration
+function printNumbers() {
+  for (var i = 0; i < 5; i++) {
+    console.log(i);
+  }
+}
+printNumbers();
 
-// // let vs. const
-// //   let: reassign all you want.
-// //   const: the reference is read-only,
-// //          but the internals are not!
-// function constIsKindaConstant() {
-//   let thing = 5;
-//   console.log(thing);
-//   thing = "now i'm a string";
-//   console.log(thing);
-// }
-// constIsKindaConstant();
+// let, const
+const name = 'Dave';
+// name = 'Someone else';
+console.log(name);
+
+const person = {
+  name: 'Dave'
+};
+person.name = 'someone else';
+console.log(person);
+
+const nums = [1, 2, 3];
+nums.push(4);
+console.log(nums);
