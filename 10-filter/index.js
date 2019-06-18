@@ -7,3 +7,9 @@ const spices = [
   { id: 4, name: 'Coriander' },
   { id: 5, name: 'Chili Powder' }
 ];
+
+const filteredSpices = spices.filter(spice => {
+  return spice.name.startsWith('C');
+});
+console.log(filteredSpices);
+console.log(spices);
